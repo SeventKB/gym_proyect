@@ -1,0 +1,35 @@
+<div>
+      <mat-card>
+          <mat-card-header>
+            <mat-card-title>BIENVENIDOS,</mat-card-title>
+            <mat-card-subtitle>Ingrese su email y contraseña</mat-card-subtitle>
+          </mat-card-header>
+          <br>
+        <form [formGroup]="form">
+          <mat-form-field appearance="outline">
+              <mat-label>Ingrese su correo</mat-label>
+              <input matInput formControlName="usuario" required>
+              <mat-icon matSuffix>alternate_email</mat-icon>
+          </mat-form-field>
+          <div *ngIf="form.get('usuario')?.hasError('required') && form.get('usuario')?.touched" class="error-message">
+            Usuario es obligatorio.
+          </div>
+          <div *ngIf="form.get('usuario')?.hasError('pattern') && form.get('usuario')?.touched" class="error-message">
+            Formato de correo electrónico no válido.
+          </div>
+          <mat-form-field appearance="outline">
+              <mat-label>Ingrese su contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="contraseña" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+
+          <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)="mostrarMensaje()">ACEPTAR</button>
+            <button mat-raised-button (click)="Cancelar()">CANCELAR</button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+    
+</div>

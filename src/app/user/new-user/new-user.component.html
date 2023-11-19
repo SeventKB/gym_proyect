@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Bienvenido, </mat-card-title>
+        <mat-card-subtitle>Ingrese los datos del usuario</mat-card-subtitle>
+    </mat-card-header>
+    <br>
+    <form [formGroup]="usuarioNuevo" (ngSubmit)="agregarUsuario()">
+    <mat-form-field appearance="outline" class="custom_form"> 
+        <mat-label>Cedula</mat-label>
+        <input matInput formControlName="cedula">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="custom_form">
+        <mat-label>Nombres</mat-label>
+        <input matInput formControlName="nombres">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="custom_form">
+        <mat-label>Apellidos</mat-label>
+        <input matInput formControlName="apellidos">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="custom_form"> 
+        <mat-label>Direccion</mat-label>
+        <input matInput formControlName="direccion">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="custom_form">
+        <mat-label>Edad</mat-label>
+        <input matInput formControlName="edad">
+    </mat-form-field>
+    <mat-card-actions align="end">
+        <button mat-raised-button color="primary">Agregar</button>
+    </mat-card-actions>
+    </form>

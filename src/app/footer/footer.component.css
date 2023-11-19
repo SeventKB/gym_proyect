@@ -1,0 +1,79 @@
+.footer{
+    background-color: rgb(164, 102, 73);
+    position: absolute;
+    bottom: 0;
+    gap: 16px;
+    width: 100%;
+    height: auto;
+    color: rgb(29, 29, 29);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:normal;
+}
+
+.footer-contact, .footer-social{
+    display: inline-block;
+    border: 1px solid rgb(145, 78, 47);
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(175, 95, 57);
+}
+
+.footer-content {
+    font-size: medium;
+    padding: 20px 20px 20px 20px;
+
+}
+
+.footer-contact p {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.footer-social {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-social ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-social ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+/*.footer-social ul li a:hover {
+    color: #ffd700; 
+}*/
+
+h3{
+    font-size: 25px;
+}
+
+.icon icon-tabler icon-tabler-brand-instagram :hover{
+    color: #E1306C;
+}
+
+.icon icon-tabler icon-tabler-brand-facebook :hover{
+    color: #4267B2;
+}
+
+.icon icon-tabler icon-tabler-brand-x :hover{
+    color: #000;
+}

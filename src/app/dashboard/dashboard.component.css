@@ -1,0 +1,30 @@
+div{
+    position: relative;
+    background-color: rgb(131, 118, 117);
+    height: 66%;
+}
+
+mat-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+mat-card{
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+
+button{
+    margin-right: 8px;
+}
