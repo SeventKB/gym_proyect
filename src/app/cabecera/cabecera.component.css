@@ -21,6 +21,7 @@ mat-toolbar{
   .Botones-menu button,
   .Boton-User button {
     background-color: white;
+    margin: 5px;
     color: black;
     border-radius: 10em;
     font-size: 15px;
@@ -66,4 +67,7 @@ mat-toolbar{
     transform: translateY(2px) translateX(1px);
     box-shadow: 0 0 0 0 salmon;
   }  
-  
+
+  .Boton-User{
+    margin-left: 20px;
+  }
