@@ -3,19 +3,27 @@ mat-toolbar{
     background: linear-gradient(rgba(20,12,12,0.6), rgba(20,12,12,0.6)), url(https://cdn.pixabay.com/photo/2013/03/09/14/38/gym-91849_1280.jpg);
     height: 100px;
     background-size: cover;
-    color: aliceblue;
 }
 
-.example-spacer {
-    font-size: 35px;
+.general span {
+  color:aliceblue;
+  text-shadow: 2px 3px 5px black;
+  }
+  
+  .general mat-menu {
+  border: 2px black;
+  }
+  
+  .example-spacer {
     flex: 1 1 auto;
-}
-
-.info{
+  }
+  
+  .Botones-menu button,
+  .Boton-User button {
     background-color: white;
     color: black;
     border-radius: 10em;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
     padding: 1em 2em;
     cursor: pointer;
@@ -24,12 +32,38 @@ mat-toolbar{
     box-shadow: 0 0 0 0 salmon;
   }
   
-  button:hover {
+  .Botones-menu button:hover,
+  .Boton-User button:hover {
     transform: translateY(-4px) translateX(-2px);
     box-shadow: 2px 5px 0 0 salmon;
   };
   
-  button:active {
+  .Botones-menu button:hover,
+  .Boton-User button:active {
     transform: translateY(2px) translateX(1px);
     box-shadow: 0 0 0 0 salmon;
   };
+  
+  .Menu_desing button {
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid salmon;
+  box-shadow: 0 0 0 0 salmon;
+  }
+  
+  .Menu_desing button:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 salmon;
+  }
+  
+  .Menu_desing button:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 salmon;
+  }  
+  

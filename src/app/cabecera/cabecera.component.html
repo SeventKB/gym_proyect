@@ -1,18 +1,23 @@
-<header>
+<div class="general">
   <mat-toolbar>
-    <span>Gym Hulk</span>
-    <span class="example-spacer"></span>
-    <div [hidden]="!loggedIn">
-      <button mat-button>Inicio</button>
-      <button mat-button [matMenuTriggerFor]="usuario">Usuario</button>
-      <mat-menu #usuario="matMenu">
-        <button mat-menu-item (click)="openNuevo()">Nuevo</button>
-        <button mat-menu-item>Consultar</button>
-        <button mat-menu-item>Eliminar</button>
-      </mat-menu>
+      <span>Gym Hulk</span>
+      <span class="example-spacer"></span>
+    <div *ngIf="loggedIn" class="menuC">
+      <div class="Botones-menu">
+        <button mat-button >Inicio</button>
+        <button mat-button [matMenuTriggerFor]="usuario">Rutinas</button>
+      </div>
+        <mat-menu #usuario="matMenu">
+          <div class="Menu_desing">
+            <button mat-menu-item (click)="openNuevo()">Nuevo</button>
+            <button mat-menu-item >Consultar</button>
+            <button mat-menu-item >Eliminar</button>
+          </div>
+        </mat-menu>
     </div>
-    <span class="example-spacer"></span>
-    <span *ngIf="loggedIn">¡Bienvenido, {{ username }}! <mat-icon (click)="logout()">exit_to_app</mat-icon></span>
-    <span *ngIf="!loggedIn"><button class="info">Acerca de</button></span>
+  <div class= "Boton-User">
+    <span *ngIf="loggedIn">¡Bienvenido, {{ username }}! <button (click)="logout()" style="font-size: 5px;"><mat-icon>exit_to_app</mat-icon></button></span>
+    <span *ngIf="!loggedIn"><button >Acerca de</button></span>
+  </div>
   </mat-toolbar>
-</header>
+</div>
