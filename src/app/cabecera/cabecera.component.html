@@ -5,7 +5,7 @@
     <div *ngIf="loggedIn" class="menuC">
       <div class="Botones-menu">
         <button mat-button >Inicio</button>
-        <button mat-button [matMenuTriggerFor]="usuario">Rutinas</button>
+        <button mat-button [matMenuTriggerFor]="usuario" (click)="Rutinas()">Rutinas</button>
         <button mat-button [matMenuTriggerFor]="usuario">Reservas</button>
         <button mat-button [matMenuTriggerFor]="usuario">Usuarios</button>
       </div>
