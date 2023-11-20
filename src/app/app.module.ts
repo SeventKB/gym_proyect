@@ -22,6 +22,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { RutinasMultimediaComponent } from './rutinas-multimedia/rutinas-multimedia.component';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
     FooterComponent,
     PaginaPrincipalComponent,
     NewUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    RutinasMultimediaComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
     MatMenuModule,
     MatTableModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
