@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from '../user-service.service';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { NewUserComponent } from '../user/new-user/new-user.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +20,9 @@ export class DashboardComponent {
   };
   clave: any;
   
-  constructor(private router: Router,private formBuilder: FormBuilder, private userService: UserServiceService){
+  constructor(private router: Router,private formBuilder: FormBuilder, private userService: UserServiceService,
+    private dialog: MatDialog)
+    {
     this.form = this.formBuilder.group({
       usuario: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]],
       contraseña: ['', Validators.required],
@@ -44,6 +48,10 @@ export class DashboardComponent {
     } else {
       alert('Debe llenar correctamente los campos');
     }
+  }
+
+  openNuevo (){
+    this.dialog.open(NewUserComponent);
   }
 
   Cancelar(){

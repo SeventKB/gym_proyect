@@ -6,45 +6,43 @@
   
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-  
-      <!-- Position Column -->
-      <ng-container matColumnDef="cedula">
-        <th mat-header-cell *matHeaderCellDef> Cedula </th>
-        <td mat-cell *matCellDef="let element"> {{element.cedula}} </td>
-      </ng-container>
-  
-      <!-- Name Column -->
+      <!-- Columna Nombres -->
       <ng-container matColumnDef="nombres">
         <th mat-header-cell *matHeaderCellDef> Nombres </th>
         <td mat-cell *matCellDef="let element"> {{element.nombres}} </td>
       </ng-container>
   
-      <!-- Weight Column -->
+      <!-- Columna Apellidos -->
       <ng-container matColumnDef="apellidos">
         <th mat-header-cell *matHeaderCellDef> Apellidos </th>
         <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
       </ng-container>
   
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="direccion">
-        <th mat-header-cell *matHeaderCellDef> Direccion </th>
-        <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+      <!-- Columna Username -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> username </th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+      </ng-container>
+
+      <!-- Columna Email -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
       </ng-container>
   
-      <ng-container matColumnDef="edad">
-        <th mat-header-cell *matHeaderCellDef> Edad </th>
-        <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+      <!-- Columna Rol -->
+      <ng-container matColumnDef="rol">
+        <th mat-header-cell *matHeaderCellDef> Rol </th>
+        <td mat-cell *matCellDef="let element"> {{element.rol}} </td>
       </ng-container>
   
       <ng-container matColumnDef="acciones">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element; let i = index" style="text-align: right;">
-          <a class="pointer" (click)="editarUser(element, i)" style="color: #47E679;" matTooltip="Editar usuario">
+          <a *ngIf="username != 'admin'" class="pointer" (click)="editarUser(element, i)" style="color: #47E679;" matTooltip="Editar usuario">
             <mat-icon>edit</mat-icon>
           </a>
-          <a class="pointer" (click)="eliminarUser(i)" style="color: #E61701;" matTooltip="Eliminar usuario">
+          <a *ngIf="username != 'admin'" class="pointer" (click)="eliminarUser(i)" style="color: #E61701;" matTooltip="Eliminar usuario">
             <mat-icon>delete</mat-icon>
           </a>
         </td>

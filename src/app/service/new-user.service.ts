@@ -8,7 +8,12 @@ export class NewUserService {
 
   constructor() { }
 
-  public users: any[] = [];
+  users: any[] = [
+    {nombres: '', apellidos: '', username: 'admin', email: 'admin@ug.edu.ec', rol: 'Administrador', contrasenia: 'admin'},
+    {nombres: 'Jose', apellidos: 'Jimenez', username: 'jjimenezz', email: 'j_jimenez@ug.edu.ec', rol: 'Coach', contrasenia: '12345'},
+    {nombres: 'Ana', apellidos: 'Naranjo', username: 'annaranjo', email: 'naranjo.a@ug.edu.ec', rol: 'Coach', contrasenia: '12345'},
+    {nombres: 'Roberto', apellidos: 'Carpio', username: 'rcarpio', email: 'rober_carpio@ug.edu.ec', rol: 'Coach', contrasenia: '12345'},
+  ];
   _userEditable: any = [];
   indice: number = 0;
 

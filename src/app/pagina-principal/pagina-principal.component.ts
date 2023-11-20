@@ -20,11 +20,12 @@ export class PaginaPrincipalComponent {
   data: any[] = [];
 
   constructor(private router:Router, private userService: UserServiceService, 
-              private dataService: NewUserService, private dialog: MatDialog) { 
-    this.nav = this.router.getCurrentNavigation();
-    this.nuevoUsuario = this.nav.extras.state;
+              private dataService: NewUserService, private dialog: MatDialog) 
+    { 
+    //this.nav = this.router.getCurrentNavigation();
+    //this.nuevoUsuario = this.nav.extras.state;
     
-    if (this.nuevoUsuario != null)
+    if (this.dataService.getUsers().length > 0)
     {
       //this.data.push(this.nuevoUsuario.datosUsuario.queryParams);
       const len = this.dataService.getUsers().length
@@ -36,7 +37,7 @@ export class PaginaPrincipalComponent {
     }
   }
 
-  displayedColumns: string[] = ['cedula', 'nombres', 'apellidos', 'direccion', 'edad', 'acciones'];
+  displayedColumns: string[] = ['nombres', 'apellidos', 'username', 'email', 'rol', 'acciones'];
   dataSource = new MatTableDataSource(this.data);
 
   ngOnInit() {
