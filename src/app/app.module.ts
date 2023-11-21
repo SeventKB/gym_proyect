@@ -24,6 +24,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { RutinasMultimediaComponent } from './rutinas-multimedia/rutinas-multimedia.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { FormsModule } from '@angular/forms';
+import { CreacionRutinasComponent } from './Rutinas/creacion-rutinas/creacion-rutinas.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     PaginaPrincipalComponent,
     NewUserComponent,
     EditUserComponent,
-    RutinasMultimediaComponent
+    RutinasMultimediaComponent,
+    CreacionRutinasComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTableModule,
     MatTooltipModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

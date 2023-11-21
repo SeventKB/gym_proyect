@@ -1,8 +1,27 @@
+.Tab-main {
+    margin-left: 10%;
+}
+
+.Tab-main mat-tab-group {
+    width: 90%;
+    height: 50%;
+}
+
 .Reproductor {
     margin: 30px;
 }
 
-.Titulo-Rutinas p {
+.Titulo-Rutinas h1 {
     text-align: center;
     font-size: 40px;
+    font-family: Helvetica;
+}
+
+.Ventana_Full_body {
+    display: flex;
+}
+
+.Lista_Full_body {
+    margin-top: 20px;
+    margin-left: 20%;
 }

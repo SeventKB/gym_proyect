@@ -1,24 +1,91 @@
 <br>
 <div class="Titulo-Rutinas">
-  <p>Tipos de Rutinas.</p>
+  <h1>Biblioteca de Rutinas/Entrenamientos</h1>
 </div>
 <br>
-<div>
-  <mat-tab-group preserveContent>
+<!-- grupo del tab de la biblioteca de rutinas/entrenamientos --> 
+<div class="Tab-main">
+  <mat-tab-group preserveContent [color]="'warn'">
     <mat-tab label="Full body">
-      <div class="Reproductor">
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/VFqTAgyXbYI?si=JKHaXmjKTHe4D07V"
-        style="border: 0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+      <div class="Ventana_Full_body">
+        <div class="Reproductor">
+        <iframe
+          [src]="seleccionado"
+          width="560"
+          height="315"
+          style="border: 0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        </div>
+        <div class="Lista_Full_body">
+          <h2 style="text-align: center;">Lista de videos</h2>
+          <p style="margin-top: -20px;">Click para reproducir un video!</p>
+          <ul>
+            <li *ngFor="let video of videos_Full_body" (click)="selectVideo(video)" style="cursor: pointer;">{{ video.title }}</li>
+          </ul>
+        </div>
       </div>
     </mat-tab>
-    <mat-tab label="Torso/Pierna">Note how the video from the previous tab is still playing.</mat-tab>
-    <mat-tab label="Empujones/Tracciones">Note how the video from the previous tab is still playing.</mat-tab>
-    <mat-tab label="Push/Pull/Legs">Note how the video from the previous tab is still playing.</mat-tab>
+    <mat-tab label="Torso/Pierna">
+      <div class="Ventana_Full_body">
+        <div class="Reproductor">
+        <iframe
+          [src]="seleccionado"
+          width="560"
+          height="315"
+          style="border: 0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        </div>
+        <div class="Lista_Full_body">
+          <h2 style="text-align: center;">Lista de videos</h2>
+          <p style="margin-top: -20px;">Click para reproducir un video!</p>
+          <ul>
+            <li *ngFor="let video of videos_Torso" (click)="selectVideo(video)" style="cursor: pointer;">{{ video.title }}</li>
+          </ul>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Empujones/Tracciones">
+      <div class="Ventana_Full_body">
+        <div class="Reproductor">
+        <iframe
+          [src]="seleccionado"
+          width="560"
+          height="315"
+          style="border: 0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        </div>
+        <div class="Lista_Full_body">
+          <h2 style="text-align: center;">Lista de videos</h2>
+          <p style="margin-top: -20px;">Click para reproducir un video!</p>
+          <ul>
+            <li *ngFor="let video of videos_Empujones_Tracciones" (click)="selectVideo(video)" style="cursor: pointer;">{{ video.title }}</li>
+          </ul>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Push/Pull/Legs">
+      <div class="Ventana_Full_body">
+        <div class="Reproductor">
+        <iframe
+          [src]="seleccionado"
+          width="560"
+          height="315"
+          style="border: 0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        </div>
+        <div class="Lista_Full_body">
+          <h2 style="text-align: center;">Lista de videos</h2>
+          <p style="margin-top: -20px;">Click para reproducir un video!</p>
+          <ul>
+            <li *ngFor="let video of videos_Push_Pull_Legs" (click)="selectVideo(video)" style="cursor: pointer;">{{ video.title }}</li>
+          </ul>
+        </div>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </div>
 
