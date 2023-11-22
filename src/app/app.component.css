@@ -1,0 +1,16 @@
+.layout{
+    min-height: 100vh;
+    height: auto;
+
+    display: grid;
+    grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    / 1fr;
+  gap: 1px;
+}
+
+.header { grid-area: header; }
+.main { grid-area: main; }
+.footer { grid-area: footer; align-self: flex-end;}

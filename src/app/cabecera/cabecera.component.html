@@ -7,7 +7,7 @@
         <button mat-button >Inicio</button>
         <button mat-button [matMenuTriggerFor]="usuario">Rutinas</button>
         <button mat-button [matMenuTriggerFor]="usuario">Reservas</button>
-        <button mat-button [matMenuTriggerFor]="usuario">Usuarios</button>
+        <button *ngIf="username == 'admin@ug.edu.ec'" mat-button (click)="openListaUsuarios()">Usuarios</button>
       </div>
         <mat-menu #usuario="matMenu">
           <div class="Menu_desing">

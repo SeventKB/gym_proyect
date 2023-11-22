@@ -33,8 +33,8 @@ export class DashboardComponent {
       this.loggedIn = true;
       this.username = this.form.get('usuario')?.value;
       this.clave = this.form.get('contraseña')?.value;
-      if(this.username== "gym@edu.ec" ){
-        if(this.clave == "12345"){
+      if(this.username== "gym@edu.ec" || this.username == "admin@ug.edu.ec" ){
+        if(this.clave == "12345" || this.clave == "admin"){
           alert('Ha presionado Aceptar');
           console.log(this.username);
           this.userService.loginUser(this.username);

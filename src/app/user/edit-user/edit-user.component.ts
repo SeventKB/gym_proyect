@@ -18,11 +18,11 @@ export class EditUserComponent implements OnInit{
     private dataService: NewUserService)
     {
     this.usuarioEditable = this.fb.group({
-      cedula: new FormControl('', Validators.required),
       nombres: new FormControl('', Validators.required),
       apellidos: new FormControl('', Validators.required),
-      direccion: new FormControl('', Validators.required),
-      edad: new FormControl('', Validators.required) 
+      username: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      rol: '',
     })
   }
 

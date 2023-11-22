@@ -32,6 +32,10 @@ export class CabeceraComponent implements OnInit{
     this.dialog.open(NewUserComponent);
   }
 
+  openListaUsuarios(){
+    this.router.navigate(["/usuarios"]);
+  }
+
   logout() {
     this.router.navigate(['/']);
     this.userService.logoutUser();
