@@ -27,6 +27,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { FormsModule } from '@angular/forms';
 import { CreacionRutinasComponent } from './Rutinas/creacion-rutinas/creacion-rutinas.component';
 
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -57,6 +61,9 @@ import { CreacionRutinasComponent } from './Rutinas/creacion-rutinas/creacion-ru
     MatDialogModule,
     MatTabsModule,
     FormsModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,7 +37,11 @@ export class CabeceraComponent implements OnInit{
     this.userService.logoutUser();
   }
 
-  Rutinas() {
+  openBiblioteca() {
     this.router.navigate(['/Rutina-Miltimedia']);
+  }
+
+  openNuevaRutina() {
+    this.router.navigate(['/Rutina-Nueva']);
   }
 }

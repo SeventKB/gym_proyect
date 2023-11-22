@@ -1,0 +1,56 @@
+.contenedor_rutina {
+    display: flex;
+}
+
+.TABLA_RUTINA {
+    margin-left: 30%;
+}
+
+h1 {
+    margin: 3%;
+    text-align: center;
+}
+
+.formulario {
+    background-color: rgb(243, 167, 104);
+    width: 400px;
+    height: 455px;
+    margin-left: 1%;
+    margin-top: 1%;
+    border-radius: 10px;
+}
+
+.example-form {
+    width: 40%;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.example-section {
+  display: flex;
+  margin-left: 6%;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+mat-checkbox {
+    margin-bottom: 1px; 
+}
+
+.Button_form {
+  margin: 50px;
+}
+
+.Button_form button {
+    margin-left: 40px;
+    color: black;
+    background-color: darksalmon;
+}
+
+.demo-table {
+    width: 20%;
+}

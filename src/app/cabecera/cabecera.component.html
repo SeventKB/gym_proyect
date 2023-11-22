@@ -5,7 +5,7 @@
     <div *ngIf="loggedIn" class="menuC">
       <div class="Botones-menu">
         <button mat-button >Inicio</button>
-        <button mat-button [matMenuTriggerFor]="usuario" (click)="Rutinas()">Rutinas</button>
+        <button mat-button [matMenuTriggerFor]="Rutinas">Rutinas</button>
         <button mat-button [matMenuTriggerFor]="usuario">Reservas</button>
         <button mat-button [matMenuTriggerFor]="usuario">Usuarios</button>
       </div>
@@ -13,6 +13,13 @@
           <div class="Menu_desing">
             <button mat-menu-item (click)="openNuevo()">Nuevo</button>
             <button mat-menu-item >Consultar</button>
+            <button mat-menu-item >Eliminar</button>
+          </div>
+        </mat-menu>
+        <mat-menu #Rutinas="matMenu">
+          <div class="Menu_desing">
+            <button mat-menu-item (click)="openBiblioteca()">Biblioteca/Rutinas</button>
+            <button mat-menu-item (click)="openNuevaRutina()">Nueva Rutina</button>
             <button mat-menu-item >Eliminar</button>
           </div>
         </mat-menu>
