@@ -5,6 +5,10 @@ mat-toolbar{
     background-size: cover;
 }
 
+.icon-tabler-barbell{
+  color: aliceblue;
+}
+
 .general span {
   color:aliceblue;
   text-shadow: 2px 3px 5px black;

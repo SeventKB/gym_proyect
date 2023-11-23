@@ -19,6 +19,9 @@ export class DashboardComponent {
     name: 'Usuario Quemado',
   };
   clave: any;
+
+  //
+  routeRedirect = '';
   
   constructor(private router: Router,private formBuilder: FormBuilder, private userService: UserServiceService,
     private dialog: MatDialog)
@@ -38,6 +41,7 @@ export class DashboardComponent {
           alert('Ha presionado Aceptar');
           console.log(this.username);
           this.userService.loginUser(this.username);
+          this.routeRedirect = this.userService.urlUsuarioIntentaAcceder;
           this.router.navigate(['/Pagina-Principal']);
         }else{
           alert('Contraseña incorrecta');
