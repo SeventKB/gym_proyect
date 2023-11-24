@@ -1,39 +1,50 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>Bienvenido, </mat-card-title>
-        <mat-card-subtitle>Ingrese los datos del usuario</mat-card-subtitle>
-    </mat-card-header>
-    <br>
-    <form [formGroup]="usuarioNuevo" (ngSubmit)="agregarUsuario()">
-    <mat-form-field appearance="outline" autocomplete="off" class="custom_form">
-        <mat-label>Nombres</mat-label>
-        <input matInput formControlName="nombres" required>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline" autocomplete="off" class="custom_form">
-        <mat-label>Apellidos</mat-label>
-        <input matInput formControlName="apellidos" required>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline" autocomplete="off" class="custom_form"> 
-        <mat-label>Username</mat-label>
-        <input matInput formControlName="username" required>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline" autocomplete="off" class="custom_form"> 
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" required>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline" class="custom_form">
-        <mat-label>Ingrese una contraseña</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off" formControlName="contrasenia" required>
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-    </mat-form-field>
-    <br>
-    <mat-card-actions align="end">
-        <button mat-raised-button color="primary">AGREGAR</button>
-    </mat-card-actions>
-    </form>
+<div class="registro_usuario">
+    <div class="registro">
+        <br>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Bienvenido, </mat-card-title>
+                <mat-card-subtitle>Ingrese los datos del usuario</mat-card-subtitle>
+            </mat-card-header>
+            <br>
+            <form [formGroup]="usuarioNuevo" (ngSubmit)="agregarUsuario()">
+            <div class="nombres_apellidos">
+                <mat-form-field appearance="outline" autocomplete="off" class="custom_form">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput formControlName="nombres" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" autocomplete="off" class="custom_form">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput formControlName="apellidos" required>
+                </mat-form-field>
+            </div>
+
+            <div class="otros_datos">
+                <mat-form-field appearance="outline" autocomplete="off" class="custom_form"> 
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" autocomplete="off" class="custom_form"> 
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="custom_form">
+                    <mat-label>Ingrese una contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off" formControlName="contrasenia" required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <mat-card-actions align="end">
+                <button mat-raised-button color="primary">AGREGAR</button>
+                <button mat-raised-button (click)="Cancelar()">CANCELAR</button>
+            </mat-card-actions>
+            <div class="logear">
+                ¿Ya tiene cuenta? <a (click)="openLogin()">Ingrese aquí</a>
+              </div>
+            </form>
+        </mat-card>
+        <br>
+    </div>
+</div>

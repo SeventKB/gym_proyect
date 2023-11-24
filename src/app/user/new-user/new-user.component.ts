@@ -16,7 +16,6 @@ export class NewUserComponent {
   usuario: string = "";
 
   constructor(private fB: FormBuilder, private router: Router,
-     private dialogRef: MatDialogRef<NewUserComponent>,
      private dataService: NewUserService,
      private userService: UserServiceService){}
 
@@ -31,7 +30,6 @@ export class NewUserComponent {
  
 
   agregarUsuario(){    
-    this.dialogRef.close(this.usuarioNuevo);
     if (this.usuarioNuevo.valid){
       this.usuario = this.usuarioNuevo.get('username')?.value;
       this.dataService.addUser(this.usuarioNuevo.value);  
@@ -39,24 +37,15 @@ export class NewUserComponent {
       this.userService.loginUser(this.usuario);
       this.router.navigate(['/Pagina-Principal']);
     }
-    /*let objToSend: NavigationExtras = {
-      queryParams: {
-        cedula: this.usuarioNuevo.value.cedula,
-        nombres: this.usuarioNuevo.value.nombres,
-        apellidos: this.usuarioNuevo.value.apellidos,
-        direccion: this.usuarioNuevo.value.direccion,
-        edad: this.usuarioNuevo.value.edad 
-      },
-      skipLocationChange: false
-    };*/
-
-    /*if (objToSend.queryParams != null){
-      this.dataService.addUser(objToSend);      
-    }*/
-
-    //this.reloadCurrentRoute(objToSend);
   }
 
+  openLogin(){
+    this.router.navigate(['/login']);
+  }
+
+  Cancelar(){
+    this.usuarioNuevo.reset();
+  }
 
   /*reloadCurrentRoute(objToSend: NavigationExtras) {
     const currentUrl = this.router.url;

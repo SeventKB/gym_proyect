@@ -1,9 +1,67 @@
-.custom_form {
-    min-width: 300px;
-    max-width: 60%;
-    padding: 0em 3em;
+.registro_usuario{
+    position: relative;
+    background-image: linear-gradient(rgba(20,12,12,0.6), rgba(20,12,12,0.6)), url('src/assets/image/IMG_0573.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    display: grid;
 }
 
-.example-container mat-form-field + mat-form-field {
-    margin-left: 8px;
+.registro{
+    display: grid;
+    justify-content: center;
+}
+
+mat-card{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 350px;
+    max-width: 30%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.nombres_apellidos{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+mat-form-field{
+    margin: 0px 10px;
+}
+
+.otros_datos{
+    display: block;
+    width: 93%;
+    justify-self: center;
+}
+
+.otros_datos mat-form-field{
+    width: 100%;
+}
+
+.logear, .error-message {
+    background: white;
+    width: 90%;
+    display: grid;
+    justify-items: center;
+    padding: 5px;
+}
+
+.logear a{
+    cursor: pointer;
+    color: blue;
+}
+
+button{
+    margin-right: 8px;
 }

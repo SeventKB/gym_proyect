@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from '../user-service.service';
 import { Router } from '@angular/router';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import { NewUserComponent } from '../user/new-user/new-user.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent {
   hide = true;
   form: FormGroup;
@@ -23,14 +22,14 @@ export class DashboardComponent {
   //
   routeRedirect = '';
   
-  constructor(private router: Router,private formBuilder: FormBuilder, private userService: UserServiceService,
-    private dialog: MatDialog)
+  constructor(private router: Router,private formBuilder: FormBuilder, private userService: UserServiceService)
     {
     this.form = this.formBuilder.group({
       usuario: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]],
       contraseña: ['', Validators.required],
     });
   }
+
   mostrarMensaje(){
     if (this.form.valid) {
       this.loggedIn = true;
@@ -55,7 +54,7 @@ export class DashboardComponent {
   }
 
   openNuevo (){
-    this.dialog.open(NewUserComponent);
+    this.router.navigate(['/registro']);
   }
 
   Cancelar(){
