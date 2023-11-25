@@ -5,6 +5,8 @@ import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.co
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { DashboardGuard } from './dashboard/dashboard-guard';
 import { NewUserComponent } from './user/new-user/new-user.component';
+import { ReservaEntrenadorComponent } from './reservas/reserva-entrenador/reserva-entrenador.component';
+import { CalendariosComponent } from './reservas/calendarios/calendarios.component';
 
 const routes: Routes = [
   {path:'', component:DashboardComponent},
