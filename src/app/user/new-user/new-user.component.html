@@ -13,10 +13,23 @@
                     <mat-label>Nombres</mat-label>
                     <input matInput formControlName="nombres" required>
                 </mat-form-field>
+                <div *ngIf="usuarioNuevo.get('nombres')?.hasError('required') && usuarioNuevo.get('nombres')?.touched" class="error-message">
+                    Nombres obligatorios.
+                </div>
+                <div *ngIf="usuarioNuevo.get('nombres')?.hasError('pattern') && usuarioNuevo.get('nombres')?.touched" class="error-message">
+                    Introduzca solo caracteres alfabeticos
+                </div>
+
                 <mat-form-field appearance="outline" autocomplete="off" class="custom_form">
                     <mat-label>Apellidos</mat-label>
                     <input matInput formControlName="apellidos" required>
                 </mat-form-field>
+                <div *ngIf="usuarioNuevo.get('apellidos')?.hasError('required') && usuarioNuevo.get('apellidos')?.touched" class="error-message">
+                    Apellidos obligatorios.
+                </div>
+                <div *ngIf="usuarioNuevo.get('apellidos')?.hasError('pattern') && usuarioNuevo.get('apellidos')?.touched" class="error-message">
+                    Introduzca solo caracteres alfabeticos
+                </div>
             </div>
 
             <div class="otros_datos">
@@ -24,10 +37,24 @@
                     <mat-label>Username</mat-label>
                     <input matInput formControlName="username" required>
                 </mat-form-field>
+                <div *ngIf="usuarioNuevo.get('username')?.hasError('required') && usuarioNuevo.get('username')?.touched" class="error-message">
+                    Username obligatorios.
+                </div>
+                <div *ngIf="usuarioNuevo.get('username')?.hasError('pattern') && usuarioNuevo.get('username')?.touched" class="error-message">
+                    Introduzca solo caracteres alfanumericos
+                </div>
+
                 <mat-form-field appearance="outline" autocomplete="off" class="custom_form"> 
                     <mat-label>Email</mat-label>
                     <input matInput formControlName="email" required>
                 </mat-form-field>
+                <div *ngIf="usuarioNuevo.get('email')?.hasError('required') && usuarioNuevo.get('email')?.touched" class="error-message">
+                    Username obligatorios.
+                </div>
+                <div *ngIf="usuarioNuevo.get('email')?.hasError('pattern') && usuarioNuevo.get('email')?.touched" class="error-message">
+                    Introduzca solo caracteres alfanumericos
+                </div>
+
                 <mat-form-field appearance="outline" class="custom_form">
                     <mat-label>Ingrese una contraseña</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off" formControlName="contrasenia" required>

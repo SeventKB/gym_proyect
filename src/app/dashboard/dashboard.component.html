@@ -15,7 +15,7 @@
               <mat-icon matSuffix>alternate_email</mat-icon>
           </mat-form-field>
           <div *ngIf="form.get('usuario')?.hasError('required') && form.get('usuario')?.touched" class="error-message">
-            Usuario es obligatorio.
+            El correo electronico es obligatorio.
           </div>
           <div *ngIf="form.get('usuario')?.hasError('pattern') && form.get('usuario')?.touched" class="error-message">
             Formato de correo electrónico no válido.

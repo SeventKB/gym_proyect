@@ -32,9 +32,6 @@ export class ListaUsuariosComponent implements AfterViewInit{
               private dataService: NewUserService, private dialog: MatDialog,
               ) 
     { 
-    //this.nav = this.router.getCurrentNavigation();
-    //this.nuevoUsuario = this.nav.extras.state;
-    
     if (this.dataService.getUsers().length > 0)
     {
       const len = this.dataService.getUsers().length
@@ -52,17 +49,6 @@ export class ListaUsuariosComponent implements AfterViewInit{
   //Columnas mostradas y el dataSource que llena la tabla
   displayedColumns: string[] = ['nombres', 'apellidos', 'username', 'email', 'rol', 'acciones'];
   dataSource = new MatTableDataSource<UserData>(this.data);
-
-
-  /*ngOnInit() {
-    this.userService.getLoggedInState().subscribe((loggedIn) => {
-      this.loggedIn = loggedIn;
-    });
-
-    this.userService.getUserName().subscribe((username) => {
-      this.username = username;
-    });
-  }*/
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

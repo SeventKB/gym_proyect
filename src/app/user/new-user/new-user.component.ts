@@ -20,10 +20,10 @@ export class NewUserComponent {
      private userService: UserServiceService){}
 
   usuarioNuevo: FormGroup = this.fB.group({
-    nombres: new FormControl('', Validators.required),
-    apellidos: new FormControl('', Validators.required),
-    username: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    nombres: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]),
+    apellidos: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]),
+    username: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+$/)]),
+    email: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]),
     rol: 'Miembro',
     contrasenia: new FormControl('', Validators.required)
   });
@@ -46,11 +46,4 @@ export class NewUserComponent {
   Cancelar(){
     this.usuarioNuevo.reset();
   }
-
-  /*reloadCurrentRoute(objToSend: NavigationExtras) {
-    const currentUrl = this.router.url;
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => { 
-      this.router.navigate([currentUrl], {state: { datosUsuario: objToSend}});
-    });
-  }*/
 }
