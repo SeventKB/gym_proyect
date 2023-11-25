@@ -12,6 +12,8 @@ const routes: Routes = [
   {path:'Pagina-Principal', component:PaginaPrincipalComponent, canActivate:[DashboardGuard]},
   {path:'usuarios', component:ListaUsuariosComponent, canActivate:[DashboardGuard]},
   {path:'registro', component:NewUserComponent},  
+  {path:'reservas-entrenador', component:ReservaEntrenadorComponent},
+  {path:'calendarios', component:CalendariosComponent}
 ];
 
 @NgModule({
