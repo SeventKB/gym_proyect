@@ -1,0 +1,26 @@
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+
+  body {
+    display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Esto alinea los elementos en la parte superior */
+  height: 100vh;
+  margin: 0;
+  }
+
+  form {
+  max-width: 400px; /* Ajusta el ancho máximo del formulario según tus preferencias */
+  width: 100%;
+  margin-top: 50px; /* Ajusta el margen superior según tus preferencias */
+}
+  
+  /* Opcional: Añade márgenes o estilos adicionales según tus necesidades */
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 16px; /* Ajusta el margen según tus preferencias */
+  }

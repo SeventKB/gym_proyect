@@ -1,0 +1,61 @@
+
+<mat-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Debe llenar los campos">
+      <body>
+        <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Selecciona un Entrenador</ng-template>
+        <mat-form-field>
+            <mat-label>Entrenadores Disponibles</mat-label>
+            <mat-select>
+              <mat-option value="option1">Billy Gonzalez Daker</mat-option>
+              <mat-option value="option2">Axel Dume Gomez</mat-option>
+              <mat-option value="option3">John Peñarrieta Guzñai</mat-option>
+              <mat-option value="option3">Genesis Mora Proaño</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <p>Selecciona el tipo de entrenamiento:</p>
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Crossfit</mat-radio-button>
+            <mat-radio-button value="2">Intense Bike</mat-radio-button>
+            <mat-radio-button value="2">Personal Trainer</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </body>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+      <body>
+        <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Elige los dias que solicitaras entrenador</ng-template>
+        <mat-form-field>
+            <mat-label>Ingrese el rango de dias</mat-label>
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+              <input matStartDate formControlName="start" placeholder="Start date">
+              <input matEndDate formControlName="end" placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </body>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <button mat-button (click)="reservarE()">RESERVAR</button>
+      <p>Ha reservado correctamente un entrenador</p>
+      <div>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button (click)="stepper.reset()">Reiniciar</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
