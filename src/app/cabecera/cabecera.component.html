@@ -5,7 +5,7 @@
       <span class="example-spacer"></span>
     <div *ngIf="loggedIn" class="menuC">
       <div class="Botones-menu">
-        <button mat-button >Inicio</button>
+        <button mat-button (click)="openPagePrincipal()">Inicio</button>
         <button mat-button [matMenuTriggerFor]="usuario">Rutinas</button>
         <button mat-button [matMenuTriggerFor]="usuario">Reservas</button>
         <button *ngIf="username == 'admin@ug.edu.ec'" mat-button (click)="openListaUsuarios()">Usuarios</button>

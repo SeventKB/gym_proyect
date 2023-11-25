@@ -36,6 +36,10 @@ export class CabeceraComponent implements OnInit{
     this.router.navigate(["/usuarios"]);
   }
 
+  openPagePrincipal(){
+    this.router.navigate(['/Pagina-Principal'])
+  }
+
   logout() {
     this.router.navigate(['/']);
     this.userService.logoutUser();

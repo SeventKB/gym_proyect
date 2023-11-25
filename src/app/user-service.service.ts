@@ -8,9 +8,6 @@ export class UserServiceService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   private username = new BehaviorSubject<string>('');
 
-  //
-  urlUsuarioIntentaAcceder = '';
-
   getLoggedInState() {
     return this.loggedIn.asObservable();
   }

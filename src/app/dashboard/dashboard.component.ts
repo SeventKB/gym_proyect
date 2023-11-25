@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from '../user-service.service';
 import { Router } from '@angular/router';
+import { NewUserService } from '../service/new-user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,10 +20,9 @@ export class DashboardComponent {
   };
   clave: any;
 
-  //
-  routeRedirect = '';
   
-  constructor(private router: Router,private formBuilder: FormBuilder, private userService: UserServiceService)
+  constructor(private router: Router,private formBuilder: FormBuilder, 
+              private userService: UserServiceService, private datos: NewUserService)
     {
     this.form = this.formBuilder.group({
       usuario: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]],
@@ -31,25 +31,29 @@ export class DashboardComponent {
   }
 
   mostrarMensaje(){
-    if (this.form.valid) {
-      this.loggedIn = true;
-      this.username = this.form.get('usuario')?.value;
-      this.clave = this.form.get('contraseña')?.value;
-      if(this.username== "gym@edu.ec" || this.username == "admin@ug.edu.ec" ){
-        if(this.clave == "12345" || this.clave == "admin"){
-          alert('Ha presionado Aceptar');
-          console.log(this.username);
-          this.userService.loginUser(this.username);
-          this.routeRedirect = this.userService.urlUsuarioIntentaAcceder;
-          this.router.navigate(['/Pagina-Principal']);
-        }else{
-          alert('Contraseña incorrecta');
-        }
-      }else{
-        alert('Datos incorrectos');
-      }
-    } else {
+    this.username = this.form.get('usuario')?.value;
+    this.clave = this.form.get('contraseña')?.value;
+    let len = this.datos.getUsers().length;
+    if(this.form.invalid){
       alert('Debe llenar correctamente los campos');
+    }
+    for(let i=0; i < len; i++)
+    {
+      if (this.form.valid) {             
+        if(this.username == this.datos.getUsers().at(i).email ){
+          if(this.clave == this.datos.getUsers().at(i).contrasenia){
+            alert('Ha presionado Aceptar');
+            this.loggedIn = true;
+            console.log(this.username);
+            this.userService.loginUser(this.username);
+            this.router.navigate(['/Pagina-Principal']);
+            break;
+          }
+        }
+      } 
+    }
+    if(!this.loggedIn){
+      alert('Email o contraseña incorrectos');
     }
   }
 
