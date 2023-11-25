@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { UserServiceService } from '../user-service.service';
 import { Router } from '@angular/router';
+import { CalendariosComponent } from '../reservas/calendarios/calendarios.component';
+
 
 
 
@@ -27,5 +29,12 @@ export class PaginaPrincipalComponent implements OnInit{
     this.userService.getUserName().subscribe((username) => {
       this.username = username;
     });
+  }
+  openReserva(){
+    this.router.navigate(["/reservas-entrenador"]);
+  }
+
+  openCalendario(){
+    this.dialog.open(CalendariosComponent);
   }
 }
