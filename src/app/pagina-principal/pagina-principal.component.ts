@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { UserServiceService } from '../user-service.service';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CalendariosComponent } from '../reservas/calendarios/calendarios.component';
 
@@ -15,7 +16,7 @@ export class PaginaPrincipalComponent implements OnInit{
   loggedIn: boolean = false;
   username: string = '';
 
-  constructor(private userService: UserServiceService) 
+  constructor(private userService: UserServiceService, private router:Router, private dialog: MatDialog) 
     { 
     //this.nav = this.router.getCurrentNavigation();
     //this.nuevoUsuario = this.nav.extras.state;
