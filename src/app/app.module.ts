@@ -25,6 +25,13 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { MatSelectModule } from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
+import { ReservaEntrenadorComponent } from './reservas/reserva-entrenador/reserva-entrenador.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {JsonPipe} from '@angular/common';
+import {MatNativeDateModule} from '@angular/material/core';
+import { CalendariosComponent } from './reservas/calendarios/calendarios.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +42,9 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
     PaginaPrincipalComponent,
     NewUserComponent,
     EditUserComponent,
-    ListaUsuariosComponent
+    ListaUsuariosComponent,
+    CalendariosComponent,
+    ReservaEntrenadorComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +62,12 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
     MatTooltipModule,
     MatDialogModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatStepperModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    JsonPipe,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
