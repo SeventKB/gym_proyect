@@ -30,4 +30,24 @@
             <p>"Los entrenadores son increíblemente solidarios, y el ambiente positivo hace que cada sesión sea un placer. ¡No puedo recomendarlo lo suficiente!" - Diego Vargas</p>
         </div>
     </div>
+    <body>
+        <div class="container">
+          <mat-card class="example-card">
+            
+              <img mat-card-image src="../../assets/image/Entrenador.png" alt="Entrenador Reserva">
+              <div class="Botones-menu">
+                  <button mat-button [matMenuTriggerFor]="reserva">Mas información</button>
+                </div>
+              <mat-menu #reserva="matMenu">
+                  <div class="Menu_desing">
+                    <button mat-menu-item (click)="openReserva()">Reservar Entrenador</button>
+                    <button mat-menu-item (click)="openCalendario()">Calendarios</button>
+                    <button mat-menu-item >Consultas</button>
+                  </div>
+              </mat-menu>
+            
+          </mat-card>
+        </div>
+      </body>
+      
 </div>
