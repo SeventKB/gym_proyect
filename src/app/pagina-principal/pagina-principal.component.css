@@ -50,3 +50,48 @@ h1{
     text-align: center;
     margin-bottom: 20px;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .example-card {
+      max-width: 800px;
+    }
+    .example-card img {
+      width: 100%;
+      height: auto; /* Esto asegura que la altura se ajuste proporcionalmente a la anchura */
+    }
+    .example-header-image {
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    }
+  
+    .Botones-menu button:hover,
+    .Boton-User button:active {
+      transform: translateY(2px) translateX(1px);
+      box-shadow: 0 0 0 0 salmon;
+    };
+  
+    .Menu_design button {
+      background-color: white;
+      color: black;
+      border-radius: 10em;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 1em 2em;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid salmon;
+      box-shadow: 0 0 0 0 salmon;
+    }
+  
+    .Menu_desing button:hover {
+      transform: translateY(-4px) translateX(-2px);
+      box-shadow: 2px 5px 0 0 salmon;
+    }
+    
+    .Menu_desing button:active {
+      transform: translateY(2px) translateX(1px);
+      box-shadow: 0 0 0 0 salmon;
+    }  
